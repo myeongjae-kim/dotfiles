@@ -16,7 +16,7 @@
   "vim.leader": ",",
   "editor.lineNumbers": "relative",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Community Material Theme Darker High Contrast",
+  "workbench.colorTheme": "Community Material Theme High Contrast",
   "editor.minimap.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "breadcrumbs.enabled": true,
@@ -34,7 +34,7 @@
     "*.json": "jsonc"
   },
   "files.insertFinalNewline": true,
-  "editor.fontFamily": "Source Code Pro Light, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "MesloLGS NF, Source Code Pro Light, Menlo, Monaco, 'Courier New', monospace",
   "code-runner.clearPreviousOutput": true,
   "code-runner.saveAllFilesBeforeRun": true,
   "code-runner.saveFileBeforeRun": true,
