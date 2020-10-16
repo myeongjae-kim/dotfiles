@@ -1,0 +1,4 @@
+set nu
+set rnu
+set scrolloff=12
+set ignorecase
