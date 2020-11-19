@@ -16,7 +16,6 @@
   "vim.leader": ",",
   "editor.lineNumbers": "relative",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Community Material Theme High Contrast",
   "editor.minimap.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "breadcrumbs.enabled": true,
@@ -25,7 +24,8 @@
   "editor.fontSize": 11,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": true,
+    "source.fixAll.eslint": true
   },
   "material-icon-theme.activeIconPack": "react_redux",
   "C_Cpp.updateChannel": "Insiders",
@@ -39,7 +39,6 @@
   "code-runner.saveAllFilesBeforeRun": true,
   "code-runner.saveFileBeforeRun": true,
   "code-runner.executorMapByFileExtension": {
-
     ".vb": "cd $dir && vbc /nologo $fileName && $dir$fileNameWithoutExt",
     ".vbs": "cscript //Nologo",
     ".scala": "scala",
@@ -69,5 +68,10 @@
     ".sass": "sass --style expanded",
     ".cu": "cd $dir && nvcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
   },
-  "editor.accessibilitySupport": "off"
+  "editor.accessibilitySupport": "off",
+  "editor.rulers": [80, 100],
+  "editor.formatOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.colorTheme": "Community Material Theme High Contrast"
 }
