@@ -31,14 +31,14 @@ export LDFLAGS="-L/usr/local/opt/ruby@3.0/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby@3.0/include"
 
 # brew install node@14
-export PATH="/usr/local/opt/node@14/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/node@14/lib"
-export CPPFLAGS="-I/usr/local/opt/node@14/include"
+#export PATH="/usr/local/opt/node@14/bin:$PATH"
+#export LDFLAGS="-L/usr/local/opt/node@14/lib"
+#export CPPFLAGS="-I/usr/local/opt/node@14/include"
 
 # brew install node@17
-# export PATH="/usr/local/opt/node@17/bin:$PATH"
-# export LDFLAGS="-L/usr/local/opt/node@17/lib"
-# export CPPFLAGS="-I/usr/local/opt/node@17/include"
+export PATH="/usr/local/opt/node@16/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/node@16/lib"
+export CPPFLAGS="-I/usr/local/opt/node@16/include"
 
 # export EDITOR='/usr/local/bin/mvim -v'
 export EDITOR='nvim'
@@ -144,6 +144,9 @@ alias l='ls -F'
 alias t='open -a Typora'
 alias o='code'
 alias nr='npm run'
+alias y='yarn'
+alias rs='rush'
+alias rx='rushx'
 alias awski='aws --profile ki'
 alias awsecr='aws --profile ecr'
 
@@ -158,6 +161,17 @@ alias kc='kotlinc'
 alias medis="nohup npx electron /Users/kimmyeongjae/projects/medis &"
 
 alias g='bit'
+
+alias j11='export PATH="/usr/local/opt/openjdk@11/bin:$PATH"'
+alias j17='export PATH="/usr/local/opt/openjdk@17/bin:$PATH"'
+
+alias sshcpbr='ssh -i ~/.ssh/carri-prod-bastion-root.pem ec2-user@3.37.112.238'
+alias sshcpbj='ssh -i ~/.ssh/carri-prod-bastion-j.pem j@3.37.112.238'
+alias sshcbbr='ssh -i ~/.ssh/carri-beta-bastion-root.pem ec2-user@43.200.87.111'
+alias sshcbbj='ssh -i ~/.ssh/carri-beta-bastion-j.pem j@43.200.87.111'
+
+alias tf='terraform'
+
 
 # cd + ls
 function cd {
@@ -181,7 +195,7 @@ complete -o nospace -C /usr/local/bin/bitcomplete bit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 # bash parameter completion for the Rush CLI
@@ -218,3 +232,8 @@ lg()
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
+complete -o nospace -C /usr/local/bin/terraform terraform

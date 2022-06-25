@@ -12,7 +12,6 @@
   "vim.history": 200,
   "vim.leader": ",",
   "editor.lineNumbers": "on",
-  "workbench.iconTheme": "eq-material-theme-icons",
   "editor.minimap.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "breadcrumbs.enabled": true,
@@ -69,13 +68,12 @@
   "editor.rulers": [80, 100],
   "editor.formatOnSave": true,
   "eslint.alwaysShowStatus": true,
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "workbench.colorTheme": "Community Material Theme",
   "window.zoomLevel": 1,
   "editor.cursorStyle": "line",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "workbench.activityBar.visible": false
+  "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "Community Material Theme"
 }
