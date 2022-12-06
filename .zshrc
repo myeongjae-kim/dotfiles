@@ -265,3 +265,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 
 complete -o nospace -C /usr/local/bin/terraform terraform
+
+# pnpm
+export PNPM_HOME="/Users/mj/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
