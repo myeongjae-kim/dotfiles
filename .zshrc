@@ -16,7 +16,7 @@ fi
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=/opt/homebrew/bin:$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -24,31 +24,17 @@ export PATH=$HOME/Library/Python/3.7/bin:$PATH
 export PATH='/usr/local/sonarqube/bin/macosx-universal-64':$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
+# homebrew
+CPU=$(uname -m)
+if [[ "$CPU" == "arm64" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  export PATH=/opt/homebrew/bin:$PATH
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
 
-# jekyll
-export PATH="/usr/local/opt/ruby@3.0/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/ruby@3.0/lib"
-export CPPFLAGS="-I/usr/local/opt/ruby@3.0/include"
-
-# brew install node@14
-#export PATH="/usr/local/opt/node@14/bin:$PATH"
-#export LDFLAGS="-L/usr/local/opt/node@14/lib"
-#export CPPFLAGS="-I/usr/local/opt/node@14/include"
-
-# brew install node@17
-export PATH="/usr/local/opt/node@16/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/node@16/lib"
-export CPPFLAGS="-I/usr/local/opt/node@16/include"
-
-# export EDITOR='/usr/local/bin/mvim -v'
-export EDITOR='nvim'
-
-
-# Add Visual Studio Code (code)
-export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin":$PATH
-
-# Groovy
-export GROOVY_HOME=/usr/local/opt/groovy/libexec
+alias ibrew="arch -x86_64 /usr/local/bin/brew"
+alias abrew="arch -arm64 /opt/homebrew/bin/brew"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -129,6 +115,52 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# aarch64
+if [[ "$CPU" == "arm64" ]]; then
+  export PATH=/opt/homebrew/bin:$PATH
+
+  alias j11='export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"'
+  alias j17='export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"'
+
+  export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+  export LDFLAGS="-L/opt/homebrew/opt/node@16/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/node@16/include"
+
+  #export PATH="/opt/homebrew/opt/node@19/bin:$PATH"
+  #export LDFLAGS="-L/opt/homebrew/opt/node@19/lib"
+  #export CPPFLAGS="-I/opt/homebrew/opt/node@19/include"
+  
+  export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+  export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+else
+  alias j11='export PATH="/usr/local/opt/openjdk@11/bin:$PATH"'
+  alias j17='export PATH="/usr/local/opt/openjdk@17/bin:$PATH"'
+
+  # jekyll
+  export PATH="/usr/local/opt/ruby@3.0/bin:$PATH"
+  export LDFLAGS="-L/usr/local/opt/ruby@3.0/lib"
+  export CPPFLAGS="-I/usr/local/opt/ruby@3.0/include"
+
+  export PATH="/usr/local/opt/node@16/bin:$PATH"
+  export LDFLAGS="-L/usr/local/opt/node@16/lib"
+  export CPPFLAGS="-I/usr/local/opt/node@16/include"
+
+  export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
+  export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+fi
+
+
+# export EDITOR='/usr/local/bin/mvim -v'
+export EDITOR='nvim'
+
+
+# Add Visual Studio Code (code)
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin":$PATH
+
+# Groovy
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+
+
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
@@ -162,8 +194,6 @@ alias medis="nohup npx electron /Users/kimmyeongjae/projects/medis &"
 
 alias g='bit'
 
-alias j11='export PATH="/usr/local/opt/openjdk@11/bin:$PATH"'
-alias j17='export PATH="/usr/local/opt/openjdk@17/bin:$PATH"'
 
 alias sshcpbr='ssh -i ~/.ssh/carri-prod-bastion-root.pem ec2-user@3.37.112.238'
 alias sshcpbj='ssh -i ~/.ssh/carri-prod-bastion-j.pem j@3.37.112.238'
@@ -195,8 +225,6 @@ complete -o nospace -C /usr/local/bin/bitcomplete bit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export PATH="/usr/local/opt/openjdk@17/bin:$PATH"
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 # bash parameter completion for the Rush CLI
 _rush_bash_complete()
