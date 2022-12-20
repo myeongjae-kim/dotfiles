@@ -1,10 +1,10 @@
-if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+if [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]; then
   if [ "$TMUX" = "" ]; then tmux; fi
   # Set name of the theme to load. Optionally, if you set this to "random"
   # it'll load a random theme each time that oh-my-zsh is loaded.
   # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-  ZSH_THEME="powerlevel10k/powerlevel10k"
 fi
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -122,6 +122,9 @@ if [[ "$CPU" == "arm64" ]]; then
   alias j11='export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"'
   alias j17='export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"'
 
+  alias n16='export PATH="/opt/homebrew/opt/node@16/bin:$PATH"'
+  alias n19='export PATH="/opt/homebrew/opt/node@19/bin:$PATH"'
+
   export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
   export LDFLAGS="-L/opt/homebrew/opt/node@16/lib"
   export CPPFLAGS="-I/opt/homebrew/opt/node@16/include"
@@ -178,6 +181,7 @@ alias o='code'
 alias nr='npm run'
 alias y='yarn'
 alias p='pnpm'
+alias px='pnpx'
 alias rs='rush'
 alias rx='rushx'
 alias awski='aws --profile ki'
