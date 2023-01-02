@@ -1,3 +1,15 @@
+# homebrew
+CPU=$(uname -m)
+if [[ "$CPU" == "arm64" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+  export PATH=/opt/homebrew/bin:$PATH
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
+
+alias ibrew="arch -x86_64 /usr/local/bin/brew"
+alias abrew="arch -arm64 /opt/homebrew/bin/brew"
+
 if [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]; then
   if [ "$TMUX" = "" ]; then tmux; fi
   # Set name of the theme to load. Optionally, if you set this to "random"
@@ -23,18 +35,6 @@ export ZSH=$HOME/.oh-my-zsh
 export PATH=$HOME/Library/Python/3.7/bin:$PATH
 export PATH='/usr/local/sonarqube/bin/macosx-universal-64':$PATH
 export PATH=$HOME/.cargo/bin:$PATH
-
-# homebrew
-CPU=$(uname -m)
-if [[ "$CPU" == "arm64" ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-  export PATH=/opt/homebrew/bin:$PATH
-  eval "$(/usr/local/bin/brew shellenv)"
-fi
-
-alias ibrew="arch -x86_64 /usr/local/bin/brew"
-alias abrew="arch -arm64 /opt/homebrew/bin/brew"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -200,10 +200,12 @@ alias medis="nohup npx electron /Users/kimmyeongjae/projects/medis &"
 alias g='bit'
 
 
-alias sshcpbr='ssh -i ~/.ssh/carri-prod-bastion-root.pem ec2-user@3.37.112.238'
-alias sshcpbj='ssh -i ~/.ssh/carri-prod-bastion-j.pem j@3.37.112.238'
-alias sshcbbr='ssh -i ~/.ssh/carri-beta-bastion-root.pem ec2-user@43.200.87.111'
-alias sshcbbj='ssh -i ~/.ssh/carri-beta-bastion-j.pem j@43.200.87.111'
+alias sshcpbr='ssh -i ~/.ssh/carri-prod-bastion-root.pem ec2-user@vpn.carri.to'
+alias sshcpbj='ssh -i ~/.ssh/carri-prod-bastion-j.pem j@vpn.carri.to'
+alias sshcbbr='ssh -i ~/.ssh/carri-beta-bastion-root.pem ec2-user@vpn.betacarri.to'
+alias sshcbbj='ssh -i ~/.ssh/carri-beta-bastion-j.pem j@vpn.betacarri.to'
+alias sshzb='ssh -i ~/.ssh/carri-beta-bastion-j.pem -NL 1081:10.101.11.95:8080 j@vpn.betacarri.to'
+alias sshzp='ssh -i ~/.ssh/carri-prod-bastion-j.pem -NL 1080:10.91.10.68:8080 j@vpn.carri.to'
 
 alias tf='terraform'
 
