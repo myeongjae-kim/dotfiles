@@ -125,13 +125,13 @@ if [[ "$CPU" == "arm64" ]]; then
   alias n16='export PATH="/opt/homebrew/opt/node@16/bin:$PATH"'
   alias n19='export PATH="/opt/homebrew/opt/node@19/bin:$PATH"'
 
-  export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
-  export LDFLAGS="-L/opt/homebrew/opt/node@16/lib"
-  export CPPFLAGS="-I/opt/homebrew/opt/node@16/include"
+  #export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+  #export LDFLAGS="-L/opt/homebrew/opt/node@16/lib"
+  #export CPPFLAGS="-I/opt/homebrew/opt/node@16/include"
 
-  #export PATH="/opt/homebrew/opt/node@19/bin:$PATH"
-  #export LDFLAGS="-L/opt/homebrew/opt/node@19/lib"
-  #export CPPFLAGS="-I/opt/homebrew/opt/node@19/include"
+  export PATH="/opt/homebrew/opt/node@19/bin:$PATH"
+  export LDFLAGS="-L/opt/homebrew/opt/node@19/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/node@19/include"
   
   export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
   export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
@@ -277,3 +277,9 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 export PNPM_HOME="/Users/mj/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH=`gem environment gemdir`/bin:$PATH
+#export PATH="/opt/homebrew/opt/ruby@2.7/bin:$PATH"
+#
+export PATH="$HOME/go/bin:$PATH"
