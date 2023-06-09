@@ -206,6 +206,8 @@ alias sshcbbr='ssh -i ~/.ssh/carri-beta-bastion-root.pem ec2-user@vpn.betacarri.
 alias sshcbbj='ssh -i ~/.ssh/carri-beta-bastion-j.pem j@vpn.betacarri.to'
 alias sshzb='ssh -i ~/.ssh/carri-beta-bastion-j.pem -NL 1081:10.101.11.95:8080 j@vpn.betacarri.to'
 alias sshzp='ssh -i ~/.ssh/carri-prod-bastion-j.pem -NL 1080:10.91.10.68:8080 j@vpn.carri.to'
+alias sshmj='ssh -i ~/.ssh/mj-service.pem ec2-user@api.myeongjae.kim'
+alias sshmjsb='ssh -i ~/.ssh/mj-service.pem -NL 3003:localhost:3000 ec2-user@api.myeongjae.kim'
 
 alias tf='terraform'
 
@@ -283,3 +285,13 @@ export PATH=`gem environment gemdir`/bin:$PATH
 #export PATH="/opt/homebrew/opt/ruby@2.7/bin:$PATH"
 #
 export PATH="$HOME/go/bin:$PATH"
+
+
+# Load rbenv automatically by appending
+# the following to ~/.zshrc:
+
+eval "$(rbenv init - zsh)"
+
+
+export NODE_BINARY="/opt/homebrew/opt/node@19/bin/node"
+alias bnet='"/Volumes/Game\ Porting\ Toolkit-1.0/gameportingtoolkit-no-hud ~/my-game-prefix "C:\users\crossover\Downloads\Battle.net-Setup.exe'
