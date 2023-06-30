@@ -204,10 +204,14 @@ alias sshcpbr='ssh -i ~/.ssh/carri-prod-bastion-root.pem ec2-user@vpn.carri.to'
 alias sshcpbj='ssh -i ~/.ssh/carri-prod-bastion-j.pem j@vpn.carri.to'
 alias sshcbbr='ssh -i ~/.ssh/carri-beta-bastion-root.pem ec2-user@vpn.betacarri.to'
 alias sshcbbj='ssh -i ~/.ssh/carri-beta-bastion-j.pem j@vpn.betacarri.to'
-alias sshzb='ssh -i ~/.ssh/carri-beta-bastion-j.pem -NL 1081:10.101.11.95:8080 j@vpn.betacarri.to'
-alias sshzp='ssh -i ~/.ssh/carri-prod-bastion-j.pem -NL 1080:10.91.10.68:8080 j@vpn.carri.to'
+alias sshdbbr='ssh -i ~/.ssh/devops-beta.pem ec2-user@52.79.130.110'
+alias sshdbbj='ssh -i ~/.ssh/j-bastion-user-deer-beta.pem j@52.79.130.110'
+alias sshzb='ssh -i ~/.ssh/carri-beta-bastion-j.pem -NL 1082:10.101.11.95:8080 j@vpn.betacarri.to'
+alias sshzp='ssh -i ~/.ssh/carri-prod-bastion-j.pem -NL 1081:10.91.10.68:8080 j@vpn.carri.to'
+alias sshdbzp='ssh -i ~/.ssh/j-bastion-user-deer-beta.pem -NL 1080:10.81.8.244:8080 j@52.79.130.110'
 alias sshmj='ssh -i ~/.ssh/mj-service.pem ec2-user@api.myeongjae.kim'
 alias sshmjsb='ssh -i ~/.ssh/mj-service.pem -NL 3003:localhost:3000 ec2-user@api.myeongjae.kim'
+alias sshor='ssh -i ~/.ssh/my-oracle.pem opc@130.162.130.217'
 
 alias tf='terraform'
 
@@ -295,3 +299,5 @@ eval "$(rbenv init - zsh)"
 
 export NODE_BINARY="/opt/homebrew/opt/node@19/bin/node"
 alias bnet='"/Volumes/Game\ Porting\ Toolkit-1.0/gameportingtoolkit-no-hud ~/my-game-prefix "C:\users\crossover\Downloads\Battle.net-Setup.exe'
+
+alias tg=terragrunt

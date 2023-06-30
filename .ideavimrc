@@ -2,3 +2,6 @@ set nu
 set rnu
 set scrolloff=12
 set ignorecase
+
+set NERDTree
+nmap \f :NERDTreeFind<CR>
