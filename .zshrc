@@ -188,8 +188,10 @@ alias awsecr='aws --profile ecr'
 
 alias cat='bat'
 alias ls='exa'
+alias tail='tspin'
 alias openj="open -a 'IntelliJ IDEA'"
 alias openw="open -a 'WebStorm'"
+alias openSimulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 
 alias k='kotlin'
 alias kc='kotlinc'
