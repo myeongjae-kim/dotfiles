@@ -129,9 +129,9 @@ if [[ "$CPU" == "arm64" ]]; then
   #export LDFLAGS="-L/opt/homebrew/opt/node@16/lib"
   #export CPPFLAGS="-I/opt/homebrew/opt/node@16/include"
 
-  export PATH="/opt/homebrew/opt/node@19/bin:$PATH"
-  export LDFLAGS="-L/opt/homebrew/opt/node@19/lib"
-  export CPPFLAGS="-I/opt/homebrew/opt/node@19/include"
+  export PATH="/opt/homebrew/opt/node@21/bin:$PATH"
+  export LDFLAGS="-L/opt/homebrew/opt/node@21/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/node@21/include"
   
   export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
   export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
@@ -189,7 +189,7 @@ alias awsecr='aws --profile ecr'
 alias cat='bat'
 alias ls='exa'
 alias tail='tspin'
-alias openj="open -a 'IntelliJ IDEA'"
+alias openj="open -a 'IntelliJ IDEA Ultimate'"
 alias openw="open -a 'WebStorm'"
 alias openSimulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 
@@ -199,6 +199,7 @@ alias kc='kotlinc'
 alias medis="nohup npx electron /Users/kimmyeongjae/projects/medis &"
 
 alias g='bit'
+alias sp='steampipe'
 
 
 alias sshcpbr='ssh -i ~/.ssh/carri-prod-bastion-root.pem ec2-user@vpn.carri.to'
@@ -279,7 +280,7 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 
-complete -o nospace -C /usr/local/bin/terraform terraform
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 # pnpm
 export PNPM_HOME="/Users/mj/Library/pnpm"
@@ -299,7 +300,17 @@ export PATH="$HOME/go/bin:$PATH"
 eval "$(rbenv init - zsh)"
 
 
-export NODE_BINARY="/opt/homebrew/opt/node@19/bin/node"
 alias bnet='"/Volumes/Game\ Porting\ Toolkit-1.0/gameportingtoolkit-no-hud ~/my-game-prefix "C:\users\crossover\Downloads\Battle.net-Setup.exe'
 
 alias tg=terragrunt
+export PATH="/opt/homebrew/opt/binutils/bin:$PATH"
+
+
+
+alias gvm='export JAVA_HOME=/Library/Java/JavaVirtualMachines/graalvm-21.jdk/Contents/Home; export PATH=/Library/Java/JavaVirtualMachines/graalvm-21.jdk/Contents/Home/bin:$PATH'
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
+
+
+export NODE_BINARY="/opt/homebrew/opt/node@21/bin/node" # 디어앱
+#export NODE_BINARY="/Users/mj/.nvm/versions/node/v14.21.3/bin/node" # 디어맨앱

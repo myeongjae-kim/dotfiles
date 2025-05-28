@@ -45,8 +45,8 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType go setlocal noexpandtab
 
 " Key Settings
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
+"nnoremap <F2> :set invpaste paste?<CR>
+"set pastetoggle=<F2>
 let mapleader = ","
 nnoremap <leader>q :bp<CR>
 nnoremap <leader>w :bn<CR>
